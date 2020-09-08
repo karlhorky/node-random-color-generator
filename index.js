@@ -4,21 +4,15 @@ const chalk = require('chalk');
 const prompt = require('prompt');
 
 const command = process.argv[2];
+const command2 = process.argv[3];
 
 if (command === `ask`) {
   prompt.start();
   prompt.get(['usersColor', 'usersLuminosity'], function (err, result) {
-    //
-    // Log the results.
-    //
-    console.log('Command-line input received:');
-    console.log(result.usersColor);
-    console.log(result.usersLuminosity);
     const myColor = randomColor({
       hue: result.usersColor,
       luminosity: result.usersLuminosity,
     });
-    console.log(myColor);
 
     console.log(
       chalk.hex(myColor)(`
@@ -29,12 +23,16 @@ if (command === `ask`) {
 ############################`),
     );
   });
-} else
+} else if (command !== 'ask') {
+  const command = process.argv[2];
+  const command2 = process.argv[3];
+  const usersPick = randomColor({ hue: command, luminosity: command2 });
   console.log(
-    chalk.hex(color)(`
+    chalk.hex(usersPick)(`
 ############################
 ############################
-#######   ${color}  #########
+#######   ${usersPick}  #########
 ############################
 ############################`),
   );
+}
