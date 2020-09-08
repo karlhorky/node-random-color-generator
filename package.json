@@ -1,0 +1,7 @@
+{
+  "name": "node-random-color-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Judith Kuneth <judith.kuneth@gmail.com.com>",
+  "license": "MIT"
+}
