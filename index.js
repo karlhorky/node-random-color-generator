@@ -6,8 +6,7 @@ const userInput = process.argv[2];
 const userInputLuminosity = process.argv[3];
 
 function output(colorCode) {
-  console.log(chalk.hex(colorCode)`
-  ################################
+  console.log(chalk.hex(colorCode)`  ################################
   ################################
   #######     ${colorCode}   ##########
   ################################
